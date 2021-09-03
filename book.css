@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    display: flex;
+    height: 100vh;  
+    align-items: center;
+    justify-content: center;
+    background: rgb(184, 184, 207);
+    perspective: 1000px;
+}
+.book{
+display: flex;
+align-items: center;
+cursor: pointer;
+justify-content: space-between;
+}
+.book:hover .cover{
+    transform: rotateX(10deg) rotateY(-180deg);
+}
+.book:hover .pages{
+    transform: rotateX(10deg) rotateY(-180deg);
+    z-index: 2;
+}
+.cover{
+    z-index: 1;
+    transition: all 3s; 
+}
+.back-cover{
+    z-index: -3;
+}
+.cover , .back-cover{
+    /* border: 1px solid wheat; */
+    height: 300px;
+    width: 240px;
+    background-image: linear-gradient(rgb(0, 255, 234) ,rgb(0, 162, 255), rgb(0, 255, 157));
+    border-radius: 3px 20px 20px 3px;
+    position: absolute;
+    box-shadow: 1px 1px 10px rgb(109, 106, 106);
+    transform:rotateX(10deg);
+    transform-origin:center left;
+} 
+.pages,.last-page{
+    position: absolute;
+    height: 280px;
+    width: 230px;
+    background: aliceblue;
+    border-radius: 3px 10px 10px 3px;
+    transform:rotateX(10deg);
+    transform-origin:center left;
+    z-index: -1;
+}
+.last-page{
+    z-index: -2;
+}
+.pages:nth-child(2){
+    transition-duration: 3s;
+}
+.pages:nth-child(3){
+    transition-duration: 2.6s;
+}
+.pages:nth-child(4){
+    transition-duration: 2.2s;
+}
+.pages:nth-child(5){
+    transition-duration: 1.8s;
+}
+.pages:nth-child(6){
+    transition-duration: 1.4s;
+}
+
+.book:hover .pages:nth-child(2){
+    transition-duration: 6s;
+}
+.book:hover .pages:nth-child(3){
+    transition-duration: 5.6s;
+}
+.book:hover .pages:nth-child(4){
+    transition-duration: 5.2s;
+}
+.book:hover .pages:nth-child(5){
+    transition-duration: 4.8s;
+}
+.book:hover .pages:nth-child(6){
+    transition-duration: 4.4s;
+}
+
+.last-page h2{
+    /* z-index: -2; */
+    position: relative;
+    margin-top: 10px;
+    color: rgb(124, 117, 117);
+    font-weight: 600;
+    font-size: larger;
+    text-align: center;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    padding-top: 10vh;
+    opacity: 0.8;
+}
